@@ -1,13 +1,13 @@
 from mako.template import Template
 import email
 import fileinput
+from flask import Flask
+app = Flask(__name__)
 
-
-def main():
-    lines = []
-    for line in fileinput.input():
-        lines.append(line)
-    s = ''.join(lines)
+@app.route('/')
+def home():
+    with open('in.mail') as f:
+        s = f.read()
 
     msg = email.message_from_string(s)
 
@@ -21,7 +21,7 @@ def main():
                       subject=msg['Subject'],
                       body=body,
                       )
-    print out.encode('utf8')
+    return out.encode('utf8')
 
 if __name__ == '__main__':
-    main()
+    app.run(debug=True)
