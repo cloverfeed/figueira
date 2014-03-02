@@ -1,9 +1,11 @@
 <html>
 <head>
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="//custom.css">
+<link rel="stylesheet" href="/static/custom.css">
 </head>
 <body>
+
+<div class="logo"></div>
 
 <div class="container">
 
